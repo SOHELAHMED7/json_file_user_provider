@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "email": "jack@pearl.com",
+        "name": "Jack Sparrow",
+        "password": "tortuga",
+        "ship": "black pearl",
+        "remember_me_token": ""
+    },
+    {
+        "id": "2",
+        "email": "davy@dutchman.com",
+        "name": "Davy Jones",
+        "password": "find sparrow",
+        "ship": "the flying dutchmen",
+        "remember_me_token": ""
+    },
+    {
+        "id": "3",
+        "email": "barbossa@doesnotexist.com",
+        "name": "Hector Barbossa",
+        "password": "find sparrow",
+        "ship": "find the ship",
+        "remember_me_token": ""
+    },
+    {
+        "id": "4",
+        "email": "blackb@revenge.com",
+        "name": "Black Beard",
+        "password": "find sparrow",
+        "ship": "queen anne's revenge",
+        "remember_me_token": ""
+    }
+]
