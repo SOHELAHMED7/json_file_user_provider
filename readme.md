@@ -3,9 +3,9 @@
 This is simple laravel web app (can also be used in APIs) which demonstrate authentication of the user of which the data is stored in json file.
 
 It is similar to simple laravel app created by `composer create-project --prefer-dist laravel/laravel blog` with addition/modification of the following files:
-* project/user_provider/\*
-* project/config/auth.php
-* project/app/Extension/\*
+* **project/user_provider/\***
+* **project/config/auth.php**
+* **project/app/Extension/\***
 
 No RDBMS like MySQL or NoSQL DB like mongoDB is required for this project.
 This is mainly for educational purpose, use of above DBs in the projects are highly recommended for data storage.
