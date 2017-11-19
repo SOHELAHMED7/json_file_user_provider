@@ -27,6 +27,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // in case of other types of files like xlxs, text etc, logic of reading those file goes here, if it grows too big, make seperate class
         Auth::provider('json_file_user', function ($app, array $config) {
             return new JsonFileUserProvider(json_decode(file_get_contents(base_path().'/user_provider/users.json'), true));
         });

@@ -1,53 +1,39 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Authenticate user stored in json file in Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This is simple laravel web app (can also be used in APIs) which demonstrate authentication of the user of which the data is stored in json file.
 
-## About Laravel
+It is similar to simple laravel app created by `composer create-project --prefer-dist laravel/laravel blog` with addition/modification of the following files:
+* project/user_provider/\*
+* project/config/auth.php
+* project/app/Extension/\*
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+No RDBMS like MySQL or NoSQL DB like mongoDB is required for this project.
+This is mainly for educational purpose, use of above DBs in the projects are highly recommended for data storage.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Utilizing awesome concepts of generic user, user provider and so on of Laravel, you can also authenticated the users of which data are stored in csv, text, xlxs etc using the flow demonstrated here in above files.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-## Learning Laravel
+### Installation and configuration
+* Open terminal
+* `git clone https://github.com/SOHELAHMED7/json_file_user_provider.git`
+* `cd json_file_user_provider`
+* `composer install`
+* Rename .env.example file to .env `mv .env.example .env`
+* Give write permissions to directories stored in /path/to/json_file_user_provider/storage like `sudo chown -R www-data:www-data storage/framework/views/`
+* `php artisan key:generate`
+* Open corresponding project url in the browser and login using the info provided in `user_provider/users.json` (for simplicity user passwords are stored as plain text in this file)
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+### When it can be used
+If the users info are stored in separate DB and in case if it goes down, its exported backup file can be used here.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+If initially the user info (in some cases) are only stored in excel sheet (or json file like here) and then you wish to authenticate your app on the top of that data, this might be helpful.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+### Contributions
+Contributions are welcome.
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
+###  Reference
+https://laravel.com/docs/5.5/authentication#adding-custom-user-providers
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+### License
+GPL v3
